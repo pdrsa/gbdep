@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Glossário Brasileiro de Expressões Populares</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div>
+      <p class="title"">
+        Glossário Brasileiro de Expressões Populares
+      </p>
+    </div>
+
+    <div>
+      <p class="carousel-title">
+        Expressões do Dia
+      </p>
+    </div>
+
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+      <!-- Full-width slides/quotes -->
+      <div class="mySlides">
+        <q> Até relógio parado acerta duas vezes ao dia.</q>
+      </div>
+
+      <div class="mySlides">
+        <q> Não confunda a grande obra do mestre Picasso com a grande pica do mestre de obras.</q>
+      </div>
+
+      <div class="mySlides">
+        <q>Pagar o pato.</q>
+      </div>
+
+      <!-- Next/prev buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!-- Dots/bullets/indicators -->
+    <div class="dot-container">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <!-- Searching and Adding Inputs -->
+    <div>
+      <p class="stats">
+        Pesquisar expressões
+      </p>
+      <input 
+      class="search-bar"
+      type="text" 
+      placeholder="Digite o termo a ser pesquisado"
+      >
+      <button class = "search-button"> 
+        BUSCAR 
+      </button>
+
+    </div>
+    
+    <div>
+      <p class="stats">
+        Adicionar novas expressões
+      </p>
+      
+      <input 
+        class="add-bar"
+        type="text" 
+        placeholder="Digite a expressão que deseja adicionar"
+      >
+      <button class="add-button">
+        SUBMETER NOVA EXPRESSÃO
+      </button>
+    </div>
+    
+    <div class="terms-list">
+      <p class="link-to-list"> Todas as Expressões </p>
+      
+    </div>
+
+    <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+      }
+    </script>
+    </body>
+</html>
