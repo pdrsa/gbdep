@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'personal/snippets/body_snippet.html' %}
+
+<div>
+  <div>
+    <p class="stats">
+      Pesquisar expressões
+    </p>
+    <input 
+    class="search-bar"
+    type="text" 
+    placeholder="Digite o termo a ser pesquisado"
+    >
+    <button class = "search-button"> 
+      BUSCAR 
+    </button>
+
+  </div>
+  
+  <div>
+    <p class="stats">
+      Adicionar novas expressões
+    </p>
+    
+    <input 
+      class="add-bar"
+      type="text" 
+      placeholder="Digite a expressão que deseja adicionar"
+    >
+    <button class="add-button">
+      SUBMETER NOVA EXPRESSÃO
+    </button>
+  </div>
+</div>
+
+{% endblock content %}
