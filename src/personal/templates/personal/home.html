@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="border: 2px solid #000;">
+  <h1>Body</h1>
+  <p>Text.</p>
+  <p>{{some_string}}</p>
+  {% include 'personal/snippets/body_snippet.html' %}
+</div>
+
+{% endblock content %}
